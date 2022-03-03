@@ -1,15 +1,10 @@
-from flask import Flask, render_template, request
-import pandas as pd
+from flask import Flask, render_template, request, flash
 import csv
 
 app = Flask(__name__)
 app.secret_key = "manbearpig_MUDMAN888"
 
 @app.route("/")
-def index():
-	return render_template("index.html")
-
-@app.route("/home")
 def index():
 	return render_template("index.html")
 
