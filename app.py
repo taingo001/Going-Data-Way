@@ -16,6 +16,11 @@ def about():
 def help():
 	return render_template("help.html")
 
+@app.route("/download")
+def download():
+	p = "test-file.csv"
+	return send_file(p,as_attachment=True)
+
 @app.route("/greet", methods=['POST', 'GET'])
 def greeter():
 	flash("Hi " + str(request.form['name_input']) + ", great to see you!")
