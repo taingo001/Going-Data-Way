@@ -63,10 +63,10 @@
    
     
     <h2>Download Our Template</h2>
-    <a href="https://going-data-way.herokuapp.com/test-file.csv" download="CSV Template">
+    <a href="{{ url_for('download', filename="test-file.csv") }}">
       <button type="button">Download</button>
     </a>
-
+    
     <h2>Upload your CSV File here</h2>
     <form action="getfile">
       <label for="myfile">Choose a file to upload.</label>
