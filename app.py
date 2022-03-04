@@ -18,7 +18,7 @@ def help():
 
 @app.route("/download")
 def download():
-	p = "test-file.csv"
+	p = "test-file.text"
 	return send_file(p,as_attachment=True)
 
 @app.route("/greet", methods=['POST', 'GET'])
