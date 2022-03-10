@@ -27,46 +27,7 @@ def download_csv():
                      attachment_filename='csv_template.csv',
                      as_attachment=True)
 
-@app.route("/data", methods=['GET', 'POST'])
-def data():	
-		#Ask what file to read--simulate uploading file
-		FILENAME=input("What file would you like to read? ")
 
-		#Read file and output the file headers
-		with open(FILENAME, mode='r') as csv_file:
-		    csvFile = csv.reader(csv_file)
-		    reader = csv.reader(csv_file)
-		    headers = next(reader)
-		    print(', '.join(headers))
-
-		#Get user input
-		selected = []
-		selected = input("What section(s) would you like to focus on?\nEnter here: ").split()
-
-		#Print new line
-		print('\n')
-
-		#Use input to print the selected columns
-		with open(FILENAME, newline="") as csvfile:
-		    data = list(csv.DictReader(csvfile))
-		    for element in selected:
-			print(element)  # print selected header
-			print("---------------------------------")
-			for column in data:  
-			    print(column[element])  # print data
-			print("\n")
-
-
-		# Calculate Averages for selected column
-		def average():
-		  sum = []
-		  for element in range(len(column[element]))
-		  sum += int(column[element])
-		  print(sum/len(column[element]))
-		# Calculate Income
-
-		#Calculate Accounts Receivable
-		return render_template("data.html")
 
 @app.route("/greet", methods=['POST', 'GET'])
 def greeter():
