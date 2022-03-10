@@ -19,11 +19,7 @@ def about():
 def help():
 	return render_template("help.html")
 
-#@app.route("/download")
-#def download():
-	#p = "test-file.text"
-	#return send_file(p,as_attachment=True)
-
+# Create a route for Download button so that users can download the template csv file
 @app.route('/csv_template.csv') # this is a job for GET, not POST
 def download_csv():
     return send_file('csv_template.csv',
