@@ -34,15 +34,12 @@ def download_csv():
 
 @app.route("/cal", methods=['GET', 'POST'])
 def cal():
-	if request.method == 'POST':
-		f = request.form['csv file']
-		data = []
-		with open(f) as file:
-			csvfile = csv.reader(file)
-			for row in csvfile:
-				data.append(row)
-		data = pd.DataFrame(data)
-		return render_template("application.html", data=data.to_html(header=False, index=False))
+		with open(FILENAME, mode='r') as csv_file:
+    		csvFile = csv.reader(csv_file)
+    		reader = csv.reader(csv_file)
+    		headers = next(reader)
+    		print(', '.join(headers))
+		return render_template("application.html", data=data.to_html)
 
 
 @app.route("/greet", methods=['POST', 'GET'])
