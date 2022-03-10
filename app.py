@@ -32,8 +32,8 @@ def download_csv():
                      attachment_filename='csv_template.csv',
                      as_attachment=True)
 
-@app.route("/application", methods=['GET', 'POST'])
-def application():
+@app.route("/cal", methods=['GET', 'POST'])
+def cal():
 	if request.method == 'POST':
 		f = request.form['csv file']
 		data = []
