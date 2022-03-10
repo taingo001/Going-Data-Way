@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, flash, send_file
 import csv
-import streamlit as st
 import pandas as pd
 
 app = Flask(__name__)
