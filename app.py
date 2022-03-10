@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, flash, send_file
 import csv
+import streamlit as st
+import pandas as pd
 
 app = Flask(__name__)
 app.secret_key = "manbearpig_MUDMAN888"
@@ -32,14 +34,14 @@ def download_csv():
                      attachment_filename='csv_template.csv',
                      as_attachment=True)
 
-@app.route("/cal", methods=['GET', 'POST'])
+"""@app.route("/cal", methods=['GET', 'POST'])
 def cal():
 		with open(FILENAME, mode='r') as csv_file:
     		csvFile = csv.reader(csv_file)
     		reader = csv.reader(csv_file)
     		headers = next(reader)
     		print(', '.join(headers))
-		return render_template("application.html", data=data.to_html)
+		return render_template("application.html", data=data.to_html)"""
 
 
 @app.route("/greet", methods=['POST', 'GET'])
