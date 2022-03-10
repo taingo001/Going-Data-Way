@@ -5,24 +5,14 @@ app = Flask(__name__)
 app.secret_key = "manbearpig_MUDMAN888"
 
 # Create a route for index.html/ home page
-"""@app.route("/")
+@app.route("/")
 def index():
-	return render_template("index.html")"""
+	return render_template("index.html")
 
-@app.route('/', methods=["GET", "POST"])
-def index():
-    data = []
-    if request.method == 'POST':
-        if request.files:
-            uploaded_file = request.files['filename'] # This line uses the same variable and worked fine
-            filepath = os.path.join(app.config['FILE_UPLOADS'], uploaded_file.filename)
-            uploaded_file.save(filepath)
-            with open(filepath) as file:
-                csv_file = csv.reader(file)
-                for row in csv_file:
-                    data.append(row)
-            return redirect(request.url)
-    return render_template('index.html', data=data)
+# Create a route for application.html/ application page
+@app.route("/application")
+def application():
+	return render_template("application.html")
 
 # Create a route for about.html/ about page
 @app.route("/about")
