@@ -24,9 +24,9 @@ def help():
 	#p = "test-file.text"
 	#return send_file(p,as_attachment=True)
 
-@app.route('/download') # this is a job for GET, not POST
+@app.route('/csv_template.csv') # this is a job for GET, not POST
 def download_csv():
-    return send_file('../csv_template.csv',
+    return send_file('csv_template.csv',
                      mimetype='text/csv',
                      attachment_filename='csv_template.csv',
                      as_attachment=True)
