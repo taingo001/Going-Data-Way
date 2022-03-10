@@ -32,17 +32,17 @@ def download_csv():
                      attachment_filename='csv_template.csv',
                      as_attachment=True)
 
-#@app.route("/data", methods=['GET', 'POST'])
-#def data():
-	#if request.method == 'POST':
-		#f = request.form['csv file']
-		#data = []
-		#with open(f) as file:
-			#csvfile = csv.reader(file)
-			#for row in csvfile:
-				#data.append(row)
-		#data = pd.DataFrame(data)
-		#return render_template("data.html", data=data.to_html(header=False, index=False))
+@app.route("/application", methods=['GET', 'POST'])
+def application():
+	if request.method == 'POST':
+		f = request.form['csv file']
+		data = []
+		with open(f) as file:
+			csvfile = csv.reader(file)
+			for row in csvfile:
+				data.append(row)
+		data = pd.DataFrame(data)
+		return render_template("application.html", data=data.to_html(header=False, index=False))
 
 
 @app.route("/greet", methods=['POST', 'GET'])
