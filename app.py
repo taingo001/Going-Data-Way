@@ -11,7 +11,7 @@ def index():
 
 # Create a route for data.html/ data page
 @app.route("/data")
-def about():
+def data():
 	return render_template("data.html")
 
 # Create a route for about.html/ about page
