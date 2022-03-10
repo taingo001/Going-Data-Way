@@ -4,14 +4,17 @@ import csv
 app = Flask(__name__)
 app.secret_key = "manbearpig_MUDMAN888"
 
+# Create a route for index.html/ home page
 @app.route("/")
 def index():
 	return render_template("index.html")
 
+# Create a route for about.html/ about page
 @app.route("/about")
 def about():
 	return render_template("about.html")
 
+# Create a route for help.html/ help page
 @app.route("/help")
 def help():
 	return render_template("help.html")
