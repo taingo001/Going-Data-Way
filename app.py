@@ -9,6 +9,11 @@ app.secret_key = "manbearpig_MUDMAN888"
 def index():
 	return render_template("index.html")
 
+# Create a route for data.html/ data page
+@app.route("/data")
+def about():
+	return render_template("data.html")
+
 # Create a route for about.html/ about page
 @app.route("/about")
 def about():
