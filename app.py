@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, send_file
 import csv
 
 app = Flask(__name__)
@@ -19,10 +19,17 @@ def about():
 def help():
 	return render_template("help.html")
 
-@app.route("/download")
-def download():
-	p = "test-file.text"
-	return send_file(p,as_attachment=True)
+#@app.route("/download")
+#def download():
+	#p = "test-file.text"
+	#return send_file(p,as_attachment=True)
+
+@app.route('/download') # this is a job for GET, not POST
+def download_csv():
+    return send_file('outputs/csv_template.csv',
+                     mimetype='text/csv',
+                     attachment_filename='csv_template.csv',
+                     as_attachment=True)
 
 @app.route("/greet", methods=['POST', 'GET'])
 def greeter():
