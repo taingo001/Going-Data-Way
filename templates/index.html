@@ -68,9 +68,9 @@
     </a>
     
     <h2>Upload your CSV File here</h2>
-    <form action="getfile">
+    <form method="POST" enctype="multipart/form-data" action="/">
       <label for="myfile">Choose a file to upload.</label>
-      <input type="file" id="myfile" name="myfile"><br><br>
+      <input type="file" id="myfile" name="myfile" accept=".csv"><br><br>
       <input type="submit" value="Submit">
     </form>
    
