@@ -42,6 +42,14 @@ def cal():
     		print(', '.join(headers))
 		return render_template("application.html", data=data.to_html)"""
 
+"""
+@app.route('/upload', methods=['GET', 'POST'])
+def upload():
+	if request.method == 'POST':
+		f = request.files['myfile']
+		f.save(f'./uploads/{secure_filename(f.filename)}')
+	return redirect(url_for('data', file=secure_filename(f.filename)))
+"""
 
 @app.route("/greet", methods=['POST', 'GET'])
 def greeter():
