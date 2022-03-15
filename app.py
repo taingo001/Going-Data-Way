@@ -32,6 +32,13 @@ def download_csv():
                      attachment_filename='csv_template.csv',
                      as_attachment=True)
 
+@app.route('/upload', methods=['GET', 'POST'])
+def upload():
+	if request.method == 'POST':
+		f = request.files['myfile']
+		f.save(f'./uploads/{secure_filename(f.filename)}')
+	return redirect(url_for('data', file=secure_filename(f.filename)))
+
 """@app.route("/cal", methods=['GET', 'POST'])
 def cal():
 		with open(FILENAME, mode='r') as csv_file:
